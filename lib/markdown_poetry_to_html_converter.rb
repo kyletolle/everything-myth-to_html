@@ -5,6 +5,8 @@ require 'bundler/setup'
 require 'dotenv'
 Dotenv.load
 
+require 'fastenv'
+
 require 'kramdown'
 require 'erb'
 require 'tilt'
@@ -46,18 +48,18 @@ class MarkdownPoetryToHtmlConverter
 
 private
   def poetry_collection_path
-    ENV['EVERYTHING_POETRY_COLLECTION_PATH']
+    Fastenv.everything_poetry_collection_path
   end
 
   def output_file_path
-    output_path      = ENV['HTML_OUTPUT_PATH']
+    output_path      = Fastenv.html_output_path
     output_file_name = 'index.html'
 
     File.join(output_path, output_file_name)
   end
 
   def html_layout_path
-    File.join(ENV['TEMPLATE_PATH'], 'layout.html.erb')
+    File.join(Fastenv.template_path, 'layout.html.erb')
   end
 
 end

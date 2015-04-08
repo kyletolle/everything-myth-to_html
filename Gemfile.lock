@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     dotenv (2.0.0)
+    fastenv (0.0.2)
     kramdown (1.6.0)
     tilt (2.0.1)
 
@@ -10,5 +11,6 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  fastenv
   kramdown
   tilt
