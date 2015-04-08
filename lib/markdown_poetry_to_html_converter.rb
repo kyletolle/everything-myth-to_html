@@ -27,7 +27,7 @@ class MarkdownPoetryToHtmlConverter
 
         piece_range = (1..141)
 
-        piece_range.step do |piece_number|
+        piece_range.each do |piece_number|
           collection_html += "\n<hr/>\n"
           piece_glob = File.join(poetry_collection_path, "#{piece_number}-*")
           piece_path = Dir[piece_glob].first
