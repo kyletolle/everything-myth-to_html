@@ -1,3 +1,7 @@
+require_relative './collection/forward'
+require_relative './collection/page_break'
+require_relative './collection/pieces'
+
 class Everything
   class Collection
     def self.path_fragment
@@ -8,41 +12,27 @@ class Everything
       @piece_number_range = piece_number_range
     end
 
-    def forward_markdown
-      forward.markdown
-    end
+    def write_html_to(output_file)
+      forward.write_html_to(output_file)
 
-    def pieces_markdown
-      pieces.map do |piece|
-        piece.raw_markdown
+      pieces.write_html_to(output_file) do
+        PageBreak.write_html_to(output_file)
       end
     end
+
   private
 
     def directory_path
-      File.join(Everything.path, Fastenv.collection_relative_path)
+      File.join(Everything.path, self.class.path_fragment)
     end
 
     def forward
-      @forward ||= Everything::Collection::Forward.new(directory_path)
+      Forward.new(directory_path)
     end
 
     def pieces
-      @pieces ||= @piece_number_range.map do |piece_number|
-        piece_name_blob = "#{piece_number}-*"
-        Piece.find(piece_name_blob, within_path: self.class.path_fragment)
-      end
-    end
-
-    class Forward
-      def initialize(collection_path)
-        @collection_path = collection_path
-        @piece           = Everything::Piece.new(@collection_path)
-      end
-
-      def markdown
-        @piece.raw_markdown
-      end
+      Pieces.new(@piece_number_range)
     end
   end
 end
+
