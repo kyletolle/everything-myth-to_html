@@ -22,3 +22,7 @@ Must define these environment variables:
 ruby lib/everything/collection/to_html.rb
 ```
 
+## License
+
+MIT
+
