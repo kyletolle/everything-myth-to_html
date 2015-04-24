@@ -1,9 +1,7 @@
 # Everything::Collection::ToHtml
 
-This is for generating a single HTML page for a collection of poetry in
-multiple markdown files.
-
-This project assumes you have an `everything` project.
+Generate a single HTML page for a collection of markdown pieces in your
+`everything` repo.
 
 ## Setup
 
