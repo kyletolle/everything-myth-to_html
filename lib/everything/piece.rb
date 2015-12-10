@@ -1,17 +1,15 @@
 class Everything
   class Piece
-    def self.find(piece_name, options={})
-      within_path    = options[:within_path]
-      glob_path      =
-        File.join(Everything.path, within_path, '**', piece_name)
-      possible_dirs  = Dir.glob glob_path
-      directory_path = possible_dirs.first
-
-      Piece.new(directory_path)
+    def self.find(piece_path)
+      Piece.new(piece_path)
     end
 
     def initialize(full_path)
       @full_path = full_path
+    end
+
+    def name
+      Pathname.new(@full_path).basename
     end
 
     def title
@@ -27,6 +25,7 @@ class Everything
     end
 
   private
+
     def content_path
       @content_path ||= File.join(@full_path, 'index.md')
     end

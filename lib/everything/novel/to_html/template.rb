@@ -2,7 +2,7 @@ require 'erb'
 require 'tilt'
 
 class Everything
-  class Collection
+  class Novel
     class ToHtml
       class Template
         def render(body)
