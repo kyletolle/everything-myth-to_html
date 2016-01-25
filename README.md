@@ -1,6 +1,6 @@
-# Everything::Novel::ToHtml
+# Everything::Myth::ToHtml
 
-Generate a single HTML page for a novel of markdown pieces in your
+Generate a single HTML page for a myth of markdown pieces in your
 `everything` repo.
 
 ## Setup
