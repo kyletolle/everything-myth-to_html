@@ -1,17 +1,17 @@
-require_relative './novel/index'
-require_relative './novel/page_break'
-require_relative './novel/pieces'
+require_relative './myth/index'
+require_relative './myth/page_break'
+require_relative './myth/versions'
 
 class Everything
-  class Novel
+  class Myth
     def self.path_fragment
-      Fastenv.novel_relative_path
+      Fastenv.myth_relative_path
     end
 
     def write_html_to(output)
       index.write_html_to(output)
 
-      pieces.write_html_to(output)
+      versions.write_html_to(output)
     end
 
   private
@@ -24,8 +24,8 @@ class Everything
       Index.new(directory_path)
     end
 
-    def pieces
-      Pieces.new
+    def versions
+      Versions.new
     end
   end
 end

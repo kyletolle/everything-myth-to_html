@@ -8,16 +8,16 @@ Generate a single HTML page for a novel of markdown pieces in your
 Must define these environment variables:
 
 - `EVERYTHING_PATH` - the full path to your everything repo.
-- `NOVEL_RELATIVE_PATH` - the path of the novel, relative
+- `MYTH_RELATIVE_PATH` - the path of the myth, relative
   to `EVERYTHING_PATH` above.
-- `HTML_OUTPUT_PATH` - the full path to write the novel's HTML files
+- `HTML_OUTPUT_PATH` - the full path to write the myth's HTML files
 - `TEMPLATE_PATH` - the full path of the ERB HTML template to use for the
-  novel
+  myth
 
 ## Usage
 
 ```
-ruby lib/everything/novel/to_html.rb
+ruby lib/everything/myth/to_html.rb
 ```
 
 ## Viewing

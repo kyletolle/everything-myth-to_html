@@ -1,5 +1,5 @@
 class Everything
-  class Novel
+  class Myth
     class PageBreak
       def self.write_html_to(output_file)
         output_file.add_content(html_line_break)

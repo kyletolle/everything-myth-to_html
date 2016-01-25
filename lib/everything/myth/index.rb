@@ -1,11 +1,11 @@
 require 'kramdown'
 
 class Everything
-  class Novel
+  class Myth
     class Index
-      def initialize(novel_path)
-        @novel_path = novel_path
-        @piece      = Everything::Piece.new(@novel_path)
+      def initialize(myth_path)
+        @myth_path = myth_path
+        @piece     = Everything::Piece.new(@myth_path)
       end
 
       def write_html_to(output)

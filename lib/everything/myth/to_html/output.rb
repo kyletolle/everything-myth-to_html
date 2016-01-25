@@ -2,7 +2,7 @@ require 'fastenv'
 require 'fileutils'
 
 class Everything
-  class Novel
+  class Myth
     class ToHtml
       class Output
         def initialize

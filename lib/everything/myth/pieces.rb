@@ -1,23 +1,29 @@
 require 'kramdown'
 
 class Everything
-  class Novel
+  class Myth
     class Pieces
+      def initialize(version_path, version_name)
+        @version_path = version_path
+        @version_name = version_name
+      end
+
       def write_html_to(output)
-        piece_header = "[Home](/index.html)\n\n"
+        home_header = "[Home](/index.html)\n\n"
+        piece_header = "[#{@version_name}](../index.html)\n\n"
         pieces_markdown.each do |piece_name, piece_markdown|
           piece_html = Kramdown::Document
-            .new(piece_header+piece_markdown)
+            .new(home_header+piece_header+piece_markdown)
             .to_html
 
-          output.add_file(piece_name, piece_html)
+          output.add_file(File.join(@version_name, piece_name), piece_html)
         end
       end
 
     private
 
       def pieces
-        days_of_writings = Dir.glob(File.join(Everything.path, Novel.path_fragment, '??.??.201?'))
+        days_of_writings = Dir.glob(File.join(@version_path, '??.??.201?'))
         @pieces ||= days_of_writings.map do |piece_path|
           Piece.find(piece_path)
         end

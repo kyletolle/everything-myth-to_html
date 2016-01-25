@@ -8,19 +8,19 @@ Dotenv.load
 require 'fastenv'
 
 require_relative '../../everything'
-require_relative '../novel'
+require_relative '../myth'
 require_relative '../piece'
 require_relative './to_html/output'
 require_relative './to_html/template'
 
 class Everything
-  class Novel
+  class Myth
     class ToHtml
       def convert
-        novel              = Everything::Novel.new
-        output             = Output.new
+        myth   = Everything::Myth.new
+        output = Output.new
 
-        novel.write_html_to(output)
+        myth.write_html_to(output)
 
         output.save
       end
@@ -28,5 +28,5 @@ class Everything
   end
 end
 
-Everything::Novel::ToHtml.new.convert
+Everything::Myth::ToHtml.new.convert
 
