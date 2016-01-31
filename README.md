@@ -1,7 +1,6 @@
 # Everything::Myth::ToHtml
 
-Generate a single HTML page for a myth of markdown pieces in your
-`everything` repo.
+Generate an HTML site for a myth of markdown pieces in your `everything` repo.
 
 ## Setup
 
