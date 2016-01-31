@@ -7,7 +7,6 @@ Dotenv.load
 
 require 'fastenv'
 require 'everything'
-require 'everything/piece/find'
 
 require_relative '../myth'
 require_relative './to_html/output'

@@ -5,8 +5,6 @@ GEM
     everything-core (0.0.7)
       dotenv (~> 2.1)
       fastenv (= 0.0.2)
-    everything-piece-find (0.7.0)
-      everything-core (~> 0.0.7)
     fastenv (0.0.2)
     kramdown (1.9.0)
     tilt (2.0.2)
@@ -17,7 +15,6 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   everything-core
-  everything-piece-find
   fastenv
   kramdown
   tilt

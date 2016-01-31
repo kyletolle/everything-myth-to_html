@@ -5,5 +5,4 @@ gem 'dotenv'
 gem 'tilt'
 gem 'fastenv'
 gem 'everything-core'
-gem 'everything-piece-find', require: 'everything/piece/find'
 
