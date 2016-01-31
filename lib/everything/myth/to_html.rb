@@ -6,14 +6,14 @@ require 'dotenv'
 Dotenv.load
 
 require 'fastenv'
+require 'everything'
+require 'everything/piece/find'
 
-require_relative '../../everything'
 require_relative '../myth'
-require_relative '../piece'
 require_relative './to_html/output'
 require_relative './to_html/template'
 
-class Everything
+module Everything
   class Myth
     class ToHtml
       def convert

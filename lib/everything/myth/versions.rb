@@ -1,7 +1,7 @@
 require 'kramdown'
 require_relative './pieces'
 
-class Everything
+module Everything
   class Myth
     class Versions
       def write_html_to(output)
@@ -22,7 +22,7 @@ class Everything
       def versions
         versions = Dir.glob(File.join(Everything.path, Myth.path_fragment, 'v*'))
         @versions ||= versions.map do |version_path|
-          [ version_path, Piece.find(version_path) ]
+          [ version_path, Piece.new(version_path) ]
         end
       end
 

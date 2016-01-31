@@ -1,7 +1,7 @@
 require 'fastenv'
 require 'fileutils'
 
-class Everything
+module Everything
   class Myth
     class ToHtml
       class Output

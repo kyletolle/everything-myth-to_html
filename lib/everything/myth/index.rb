@@ -1,6 +1,6 @@
 require 'kramdown'
 
-class Everything
+module Everything
   class Myth
     class Index
       def initialize(myth_path)

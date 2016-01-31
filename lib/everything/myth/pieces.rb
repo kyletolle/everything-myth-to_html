@@ -1,6 +1,6 @@
 require 'kramdown'
 
-class Everything
+module Everything
   class Myth
     class Pieces
       def initialize(version_path, version_name)
@@ -25,7 +25,7 @@ class Everything
       def pieces
         days_of_writings = Dir.glob(File.join(@version_path, '??.??.201?'))
         @pieces ||= days_of_writings.map do |piece_path|
-          Piece.find(piece_path)
+          Piece.new(piece_path)
         end
       end
 

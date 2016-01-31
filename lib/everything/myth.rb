@@ -2,7 +2,7 @@ require_relative './myth/index'
 require_relative './myth/page_break'
 require_relative './myth/versions'
 
-class Everything
+module Everything
   class Myth
     def self.path_fragment
       Fastenv.myth_relative_path

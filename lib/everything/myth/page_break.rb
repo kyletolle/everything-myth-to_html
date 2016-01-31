@@ -1,4 +1,4 @@
-class Everything
+module Everything
   class Myth
     class PageBreak
       def self.write_html_to(output_file)

@@ -1,7 +1,7 @@
 require 'erb'
 require 'tilt'
 
-class Everything
+module Everything
   class Myth
     class ToHtml
       class Template
