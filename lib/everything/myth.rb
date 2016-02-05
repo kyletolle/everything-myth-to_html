@@ -21,11 +21,11 @@ module Everything
     end
 
     def index
-      Index.new(directory_path)
+      @index ||= Index.new(directory_path)
     end
 
     def versions
-      Versions.new
+      Versions.new(index.public_pieces)
     end
   end
 end

@@ -14,6 +14,10 @@ module Everything
         output.add_file('', index_html)
       end
 
+      def public_pieces
+        @piece.public_pieces
+      end
+
       private
 
       def markdown
