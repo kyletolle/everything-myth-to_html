@@ -1,6 +1,12 @@
 module Everything
   module AddPiecesToPieceRefinement
     refine Everything::Piece do
+      attr_reader :parent
+
+      def parent=(parent_piece)
+        @parent = parent_piece
+      end
+
       def public_pieces
         pieces.select do |piece|
           piece.public?
@@ -17,6 +23,7 @@ module Everything
 
         sub_pieces_paths.map do |sub_piece_path|
           Piece.new(sub_piece_path)
+            .tap {|p| p.parent = self }
         end
       end
     end
