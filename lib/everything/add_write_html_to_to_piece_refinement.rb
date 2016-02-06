@@ -1,20 +1,50 @@
 require 'kramdown'
+require_relative './add_pieces_to_piece_refinement'
 
 module Everything
   module AddWriteHtmlToToPieceRefinement
     refine Everything::Piece do
-      attr_reader :parent
+      using Everything::AddPiecesToPieceRefinement
 
-      def parent=(parent_piece)
-        @parent = parent_piece
-      end
-
-      def write_html_to(output, header_markdown="")
+      def write_html_to(output)
         piece_html = Kramdown::Document
-          .new(header_markdown+raw_markdown)
+          .new(total_header_markdown+raw_markdown)
           .to_html
 
-        output.add_file(File.join(parent.name, name), piece_html)
+        output.add_file(piece_dir_name, piece_html)
+
+        public_pieces.each do |sub_piece|
+          sub_piece.write_html_to(output)
+        end
+      end
+
+      def piece_dir_name
+        if parent
+          File.join(parent.piece_dir_name, name)
+        else
+          name
+        end
+      end
+
+      def total_header_markdown
+        if parent
+          parent.sub_piece_header_markdown
+        else
+          ''
+        end
+      end
+
+      def sub_piece_header_markdown
+        this_header_markdown = "[#{name}](../index.html)\n\n"
+
+        parent_header_markdown =
+          if parent
+            parent.sub_piece_header_markdown
+          else
+            ''
+          end
+
+        parent_header_markdown + this_header_markdown
       end
     end
   end
