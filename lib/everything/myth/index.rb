@@ -1,8 +1,11 @@
 require 'kramdown'
+require_relative '../add_pieces_to_piece_refinement'
 
 module Everything
   class Myth
     class Index
+      using Everything::AddPiecesToPieceRefinement
+
       def initialize(myth_path)
         @myth_path = myth_path
         @piece     = Everything::Piece.new(@myth_path)

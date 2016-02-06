@@ -9,7 +9,6 @@ require 'fastenv'
 require 'everything'
 
 require_relative '../myth'
-require_relative '../piece'
 require_relative './to_html/output'
 require_relative './to_html/template'
 

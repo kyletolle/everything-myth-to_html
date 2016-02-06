@@ -1,9 +1,12 @@
 require 'kramdown'
 require_relative './pieces'
+require_relative '../add_pieces_to_piece_refinement'
 
 module Everything
   class Myth
     class Versions
+      using Everything::AddPiecesToPieceRefinement
+
       def initialize(version_pieces)
         @version_pieces = version_pieces
       end

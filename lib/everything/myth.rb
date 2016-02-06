@@ -1,9 +1,12 @@
 require_relative './myth/index'
 require_relative './myth/page_break'
 require_relative './myth/versions'
+require_relative './add_pieces_to_piece_refinement'
 
 module Everything
   class Myth
+    using Everything::AddPiecesToPieceRefinement
+
     def self.path_fragment
       Fastenv.myth_relative_path
     end
