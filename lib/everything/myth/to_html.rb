@@ -14,7 +14,7 @@ module Everything
         output = Output.new(myth.name)
 
         def myth.sub_piece_header_markdown
-          "[Home](/index.html)\n\n"
+          "[#{title}](/index.html)"
         end
 
         def myth.piece_dir_name

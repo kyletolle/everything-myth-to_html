@@ -8,7 +8,7 @@ module Everything
 
       def write_html_to(output)
         piece_html = Kramdown::Document
-          .new(total_header_markdown+raw_markdown)
+          .new("#{total_header_markdown}\n\n#{raw_markdown}")
           .to_html
 
         output.add_file(piece_dir_name, piece_html)
@@ -35,7 +35,7 @@ module Everything
       end
 
       def sub_piece_header_markdown
-        this_header_markdown = "[#{name}](../index.html)\n\n"
+        this_header_markdown = "[#{name}](../index.html)"
 
         parent_header_markdown =
           if parent
@@ -44,7 +44,7 @@ module Everything
             ''
           end
 
-        parent_header_markdown + this_header_markdown
+        "#{parent_header_markdown} > #{this_header_markdown}"
       end
     end
   end
