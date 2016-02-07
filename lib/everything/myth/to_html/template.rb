@@ -2,7 +2,7 @@ require 'erb'
 require 'tilt'
 
 module Everything
-  class Myth < Piece
+  module Myth
     class ToHtml
       class Template
         def render(body)

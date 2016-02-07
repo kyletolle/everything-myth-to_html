@@ -2,7 +2,7 @@ require 'fastenv'
 require 'fileutils'
 
 module Everything
-  class Myth < Piece
+  module Myth
     class ToHtml
       class Output
         def initialize(myth_name)

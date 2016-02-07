@@ -2,7 +2,7 @@ require_relative './to_html/output'
 require_relative './to_html/template'
 
 module Everything
-  class Myth < Piece
+  module Myth
     class ToHtml
       using Everything::AddWriteHtmlToToPieceRefinement
 

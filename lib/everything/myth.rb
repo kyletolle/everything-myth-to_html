@@ -2,17 +2,14 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
-
 Dotenv.load
+
+module Everything
+  module Myth
+  end
+end
 
 require_relative './add_write_html_to_to_piece_refinement'
 require_relative './myth/to_html'
-
-module Everything
-  class Myth < Piece
-    def self.find_by_name_recursive(myth_name)
-      Piece.find_by_name_recursive(myth_name)
-    end
-  end
-end
+require_relative './myth/cli'
 
