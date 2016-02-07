@@ -2,10 +2,11 @@ require 'fastenv'
 require 'fileutils'
 
 module Everything
-  class Myth
+  class Myth < Piece
     class ToHtml
       class Output
-        def initialize
+        def initialize(myth_name)
+          @myth_name = myth_name
           @chunks = []
         end
 
@@ -36,7 +37,10 @@ module Everything
       private
 
         def write_css_file
-          css_path = Pathname.new(output_path).dirname.join('css/style.css')
+          css_path = Pathname
+            .new(base_output_path)
+            .dirname
+            .join('css/style.css')
           File.open(css_path) do |css_file|
             css_contents = css_file.read
             css_output_path = File.join(output_path, 'style.css')
@@ -50,8 +54,13 @@ module Everything
           File.join(output_path, chunk_name, file_name)
         end
 
-        def output_path
+        def base_output_path
           Fastenv.html_output_path
+        end
+
+        def output_path
+          File.join(base_output_path, @myth_name)
+            .tap{|path| FileUtils.mkdir_p(path) }
         end
 
         def file_name
