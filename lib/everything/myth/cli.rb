@@ -1,3 +1,5 @@
+require 'everything/myth'
+
 module Everything
   module Myth
     class CLI < Thor
@@ -11,4 +13,3 @@ module Everything
   end
 end
 
-Everything::Myth::CLI.start(ARGV)
