@@ -35,7 +35,7 @@ module Everything
       end
 
       def sub_piece_header_markdown
-        this_header_markdown = "[#{name}](../index.html)"
+        this_header_markdown = "[#{name}](../)"
 
         parent_header_markdown =
           if parent
