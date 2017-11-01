@@ -40,7 +40,7 @@ module Everything
           css_path = Pathname
             .new(base_output_path)
             .dirname
-            .join('css/style.css')
+            .join('css', 'style.css')
           File.open(css_path) do |css_file|
             css_contents = css_file.read
             css_output_path = File.join(output_path, 'style.css')
