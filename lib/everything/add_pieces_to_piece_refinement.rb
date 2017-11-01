@@ -23,7 +23,8 @@ module Everything
 
         sub_pieces_paths.map do |sub_piece_path|
           metadata_file_path = File.join(sub_piece_path, 'index.yaml')
-          next if File.file?(metadata_file_path)
+          next unless File.file?(metadata_file_path)
+
           Piece.new(sub_piece_path)
             .tap {|p| p.parent = self }
         end
