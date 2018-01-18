@@ -28,7 +28,11 @@ module Everything
 
       def total_header_markdown
         if parent
-          parent.sub_piece_header_markdown
+          <<~HEADER
+            <header markdown="1">
+              #{parent.sub_piece_header_markdown}
+            </header>
+          HEADER
         else
           ''
         end
@@ -44,7 +48,7 @@ module Everything
             ''
           end
 
-        "#{parent_header_markdown} > #{this_header_markdown}"
+        "#{parent_header_markdown} &gt; #{this_header_markdown}"
       end
     end
   end
