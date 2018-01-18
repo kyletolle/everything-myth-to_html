@@ -73,7 +73,7 @@ p {
 
 /* Found this approach at http://smad.jmu.edu/shen/webtype/indent.html */
 p + p {
-  text-indent: 1.2em;
+  text-indent: 1.5em;
 }
 
 /* Borrowing an idea from https://css-tricks.com/examples/hrs/ */
