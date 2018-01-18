@@ -76,6 +76,11 @@ p + p {
   text-indent: 1.2em;
 }
 
+hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 footer {
   padding-top: 1em;
   line-height: 1.4em;
