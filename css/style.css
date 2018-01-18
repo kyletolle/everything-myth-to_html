@@ -69,16 +69,25 @@ ul {
 p {
   line-height: 1.68em;
   font-size: 1.5em;
-  /* margin-bottom: 1em; */
 }
 
+/* Found this approach at http://smad.jmu.edu/shen/webtype/indent.html */
 p + p {
   text-indent: 1.2em;
 }
 
+/* Borrowing an idea from https://css-tricks.com/examples/hrs/ */
 hr {
+  border: none;
   margin-top: 2em;
   margin-bottom: 2em;
+  text-align: center;
+}
+hr:after {
+  /* content: "§"; */
+  /* Asterism: https://en.wikipedia.org/wiki/Asterism_(typography) */
+  content: "⁂";
+  font-size: 1.5em;
 }
 
 footer {
