@@ -9,7 +9,9 @@
 html, body { height: 100%; }
 
 body {
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  /* Baskerville or Garamond also look good. Gives a more print-like read. */
+  font-family: 'Libre Baskerville', Baskerville, Garamond, serif;
+  /* font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; */
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
