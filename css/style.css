@@ -75,6 +75,7 @@ ul {
 p {
   line-height: 1.68em;
   font-size: 1.5em;
+  text-align: justify;
 }
 
 /* Found this approach at http://smad.jmu.edu/shen/webtype/indent.html */
